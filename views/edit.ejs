@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes app</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main w-screen min-h-screen bg-zinc-900 py-[10%] px-[30%]">
+      
+        <form class="bg-inherit flex flex-col gap-5" action="/edit" method="post">
+            <input
+              type="text"
+              name="previous"
+              value="<%= title %>"
+              id="previous"
+              placeholder="Previous title"
+              class="text-zinc-400 p-3 bg-zinc-800 rounded-lg w-full border border-black/30"
+              readonly
+            />
+
+            <input
+              type="text"
+              name="new"
+              id="new"
+              placeholder="New title"
+              class="text-white p-3 bg-zinc-800 rounded-lg w-full border border-black/30"
+            />
+            
+            <button
+              type="submit"
+              id="submit"
+              class="w-fit bg-yellow-600 py-2 rounded-lg text-white px-8 border border-black/30"
+            >
+              Update filename
+            </button>
+          </form> 
+      
+      <!-- go back to home -->
+       <a href="/" class="text-blue-600 absolute top-16 left-16">Go back to home</a>
+    </div>
+  </body>
+</html>
+
+

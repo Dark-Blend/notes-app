@@ -28,6 +28,7 @@ app.post("/create", (req, res) => {
         res.redirect("/");
     });
 });
+
 app.get("/file/:file", (req, res) => {
     fs.readFile(`./files/${req.params.file}`,'utf-8',(err,data)=>{
         if (err) {
@@ -38,6 +39,19 @@ app.get("/file/:file", (req, res) => {
     })
 });
 
+app.get("/edit/:file", (req, res) => {
+    res.render('edit',{title: req.params.file.split('.')[0]});
+});
+
+app.post("/edit", (req, res) => {
+    fs.rename(`./files/${req.body.previous}.txt`, `./files/${req.body.new.split(' ').join('')}.txt`, (err) => {
+      if(err){
+        console.error("Error renaming file:", err);
+        return res.status(500).send("Error renaming file");
+      }
+      res.redirect("/");
+    });
+});
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

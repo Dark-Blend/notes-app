@@ -38,7 +38,10 @@
           <% if( files.length > 0 ){ %> <% files.forEach((file)=>{ %>
           <div class="task bg-zinc-800 p-5 rounded-lg">
             <h3 class="font-bold text-white"><%=file%></h3>
-            <a href='/file/<%= file%>'' class="text-xs text-blue-400">Read more...</a>
+            <div class="flex justify-between items-center mt-5">
+              <a href='/file/<%= file%>'' class="text-xs text-blue-400">Read more...</a>
+              <a href='/edit/<%= file%>'' class="text-xs text-zinc-400">Edit Filename</a>
+            </div>
           </div>
           <% }) %> <% } else { %>
           <h3
