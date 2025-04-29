@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes app</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main w-screen min-h-screen bg-zinc-900 py-[10%] px-[30%]">
+      <h3 class="text-center font-bold text-2xl my-5 text-white bg-zinc-800 rounded-lg py-10"><%= title%></h3>
+      <p class="text-zinc-500 text-lg bg-zinc-800 rounded-lg p-5">
+        <%=  content %>
+      </p>
+      
+      <!-- go back to home -->
+       <a href="/" class="text-blue-600 absolute top-16 left-16">Go back to home</a>
+    </div>
+
+  </body>
+</html>
+
+
